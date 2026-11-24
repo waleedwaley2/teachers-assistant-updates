@@ -70,9 +70,17 @@
            border: 1px solid var(--line); border-radius: 10px; padding: 4px 14px; text-decoration: none; }
   .copy { font: inherit; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 5px 12px; cursor: pointer; margin-inline-start: 8px; }
   footer { text-align: center; color: var(--soft); font-size: 13.5px; padding: 12px 0 30px; }
+  .feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .feat { background: var(--bg); border-radius: 14px; padding: 16px 18px; }
+  .feat .ic { font-size: 26px; line-height: 1; }
+  .feat h3 { margin: 8px 0 4px; font-size: 17px; }
+  .feat p { margin: 0; color: var(--soft); font-size: 14.5px; }
+  .new { border-inline-start: 5px solid var(--green); }
+  .new .tag { display: inline-block; background: #dcfce7; color: var(--green); font-weight: 800; border-radius: 999px; padding: 2px 12px; font-size: 14px; }
+  #notes { color: var(--soft); white-space: pre-line; margin: 10px 0 0; direction: ltr; text-align: left; }
   @media (max-width: 820px) {
     .hero, .warn, .two { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; }
+    .steps, .feats { grid-template-columns: 1fr; }
     ul.tick { grid-template-columns: 1fr; }
     .hero h1 { font-size: 30px; }
   }
@@ -107,13 +115,36 @@
     <div class="steps">
       <div class="step"><div class="num">1</div>
         <h3><span class="ar">نزّل البرنامج</span><span class="en">Download</span></h3>
-        <p><span class="ar">اضغط زرار التحميل. هينزل ملف واحد اسمه TeachersAssistant-Setup.exe (حوالي 62 ميجا).</span><span class="en">Press Download. One file, TeachersAssistant-Setup.exe (about 62 MB), is saved.</span></p></div>
+        <p><span class="ar">اضغط زرار التحميل. هينزل ملف واحد اسمه TeachersAssistant-Setup.exe (حوالي 63 ميجا).</span><span class="en">Press Download. One file, TeachersAssistant-Setup.exe (about 63 MB), is saved.</span></p></div>
       <div class="step"><div class="num">2</div>
         <h3><span class="ar">افتح الملف</span><span class="en">Open it</span></h3>
         <p><span class="ar">افتحه من التنزيلات. لو ظهرت شاشة ويندوز الزرقا اضغط More info ثم Run anyway (الصورة تحت). مش محتاج صلاحيات Admin.</span><span class="en">Open it from Downloads. If Windows shows the blue screen, press More info, then Run anyway (picture below). No admin rights needed.</span></p></div>
       <div class="step"><div class="num">3</div>
         <h3><span class="ar">ادخل واشتغل</span><span class="en">Sign in and start</span></h3>
         <p><span class="ar">البرنامج يفتح لوحده. اكتب إيميل معارف بتاعك، وفي خانة الكود اكتب <span class="code">DEMO</span> وخلاص.</span><span class="en">The app opens by itself. Type your Maarif email, and in the code box type <span class="code">DEMO</span>. That's it.</span></p></div>
+    </div>
+  </section>
+
+  <section class="card new" id="whatsnew" hidden>
+    <span class="tag"><span class="ar">الجديد في النسخة</span><span class="en">New in version</span> <span id="newv"></span></span>
+    <p id="notes"></p>
+  </section>
+
+  <section class="card">
+    <h2><span class="ar">البرنامج بيعمل إيه؟</span><span class="en">What it does</span></h2>
+    <div class="feats">
+      <div class="feat"><div class="ic">📅</div><h3><span class="ar">تشغيل الأسبوع</span><span class="en">Run my week</span></h3>
+        <p><span class="ar">خطط الأسبوع على SharePoint، والواجبات والتقييمات على Schoology، جزء جزء مع علامة "تم" والوقت المتبقي.</span><span class="en">Weekly plans to SharePoint, assignments and assessments to Schoology, part by part with a Done mark and the time left.</span></p></div>
+      <div class="feat"><div class="ic">✅</div><h3><span class="ar">الحضور والملاحظات</span><span class="en">Attendance and marks</span></h3>
+        <p><span class="ar">حاضر، غائب، خروج مبكر، بدون واجب، بدون كتب، لم يشارك — ورسالة لولي الأمر على واتساب باسم المعلم والطالب.</span><span class="en">Present, absent, early exit, no homework, no books, didn't participate — with a WhatsApp message to the parent naming teacher and student.</span></p></div>
+      <div class="feat"><div class="ic">🎨</div><h3><span class="ar">استوديو المواد</span><span class="en">Materials Studio</span></h3>
+        <p><span class="ar">عروض بوربوينت بتصميمك أنت، وأوراق عمل وكتيّبات واختبارات من صفحات الكتاب نفسها، بالذكاء الاصطناعي المجاني.</span><span class="en">PowerPoints in your own design, worksheets, booklets and tests from the book's own pages, with free AI.</span></p></div>
+      <div class="feat"><div class="ic">🤖</div><h3><span class="ar">ذكاء اصطناعي مجاني</span><span class="en">Free AI, never stuck</span></h3>
+        <p><span class="ar">Gemini و Groq و OpenRouter و Mistral وغيرهم: لو واحد مشغول أو خلص حده، البرنامج ينقل للتاني لوحده.</span><span class="en">Gemini, Groq, OpenRouter, Mistral and more: if one is busy or out of quota, the app moves to the next by itself.</span></p></div>
+      <div class="feat"><div class="ic">📸</div><h3><span class="ar">سجل الإثبات</span><span class="en">Proof log</span></h3>
+        <p><span class="ar">كل نشر أو رسالة بتتأكد وتتسجل بصورة: إمتى، فين، لمين وليه — وملف PDF لأي فترة تختارها.</span><span class="en">Every publish and message is checked and kept with a screenshot: when, where, to whom and why — as a PDF for any dates you pick.</span></p></div>
+      <div class="feat"><div class="ic">🔒</div><h3><span class="ar">بياناتك عندك</span><span class="en">Your data stays with you</span></h3>
+        <p><span class="ar">البرنامج شغال على جهازك، ومفاتيحك محفوظة مشفّرة في ويندوز، وقسم الراتب مقفول بكلمة سر من 6 حروف.</span><span class="en">Runs on your own PC, keys kept encrypted by Windows, and the salary section locked with a 6-character password.</span></p></div>
     </div>
   </section>
 
@@ -184,7 +215,16 @@
     try { new QRCode(document.getElementById('qr'), { text: SHORT, width: 170, height: 170 }); } catch (e) {}
     fetch('https://api.github.com/repos/waleedwaley2/teachers-assistant-updates/releases/latest')
       .then(function (r) { return r.json(); })
-      .then(function (j) { if (j && j.tag_name) { info = { v: j.tag_name.replace(/^v/, ''), d: (j.published_at || '').slice(0, 10) }; ver(); } })
+      .then(function (j) {
+        if (!j || !j.tag_name) return;
+        info = { v: j.tag_name.replace(/^v/, ''), d: (j.published_at || '').slice(0, 10) }; ver();
+        var body = (j.body || '').replace(/\r/g, '').replace(/^\s*SHA256:.*$/gim, '').trim();
+        if (body) {   // the release notes, so the page always shows what is new
+          document.getElementById('newv').textContent = info.v;
+          document.getElementById('notes').textContent = body.split(/(?<=\.)\s+/).join('\n• ').replace(/^/, '• ');
+          document.getElementById('whatsnew').hidden = false;
+        }
+      })
       .catch(function () {});
     var saved = null;
     try { saved = localStorage.getItem('lang'); } catch (e) {}
