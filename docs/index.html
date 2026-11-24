@@ -149,6 +149,8 @@
       <h2><span class="ar">ابعت البرنامج لزميل</span><span class="en">Send it to a colleague</span></h2>
       <p><span class="ar">ابعت اللينك ده، أو خليه يصوّر الكود بالموبايل. اللينك ثابت وبينزّل آخر نسخة دايمًا.</span><span class="en">Send this link, or let them scan the code. The link never changes and always gives the newest version.</span></p>
       <p><a class="short" id="short" href="https://tinyurl.com/maarif-teacher-app">tinyurl.com/maarif-teacher-app</a><button class="copy" id="copy" type="button"><span class="ar">نسخ</span><span class="en">Copy</span></button></p>
+      <p><span class="ar">أو لينك التحميل المباشر (بينزّل البرنامج على طول):</span><span class="en">Or the direct download link (the installer downloads at once):</span><br>
+        <a class="short" href="https://tinyurl.com/maarif-teacher-setup">tinyurl.com/maarif-teacher-setup</a><button class="copy" id="copy2" type="button"><span class="ar">نسخ</span><span class="en">Copy</span></button></p>
       <h2 style="margin-top:24px"><span class="ar">الدعم</span><span class="en">Support</span></h2>
       <p><span class="ar">من جوه البرنامج: زرار الدعم في الشريط العلوي. أو كلّمنا على واتساب:</span><span class="en">Inside the app: the support button in the top bar. Or message us on WhatsApp:</span></p>
       <a class="wa" href="https://wa.me/966531342318" target="_blank" rel="noopener">WhatsApp · <span class="ar">وليد والي</span><span class="en">Waleed Waley</span></a>
@@ -178,6 +180,7 @@
     }
     buttons.forEach(function (b) { b.onclick = function () { set(b.getAttribute('data-l')); }; });
     document.getElementById('copy').onclick = function () { if (navigator.clipboard) navigator.clipboard.writeText(SHORT); };
+    document.getElementById('copy2').onclick = function () { if (navigator.clipboard) navigator.clipboard.writeText('https://tinyurl.com/maarif-teacher-setup'); };
     try { new QRCode(document.getElementById('qr'), { text: SHORT, width: 170, height: 170 }); } catch (e) {}
     fetch('https://api.github.com/repos/waleedwaley2/teachers-assistant-updates/releases/latest')
       .then(function (r) { return r.json(); })
